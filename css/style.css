@@ -16,15 +16,16 @@ body{
   background-size:cover;
   background-position:center;
   height:100vh;
-  opacity:50%;
   display:flex;
   flex-direction:column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   text-align: center;
   padding:0 20px;
   z-index: -1;
 }
+
+
 
 #inner-module {
   display:flex;
@@ -86,4 +87,77 @@ body{
   background:#248AD5;
   color:#fff;
   padding:20px;
+}
+
+form {
+  border: 3px solid #fff;
+  background-color: #fff;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #248AD5;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 12px 0 12px 0;
+  width: 50px;
+  height: 50px;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  width: 350px;
+  align-items: flex-end;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: right;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+#showcase .frm {
+  align-content: center;
+
+}
+
+#profile-showcase {
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 25vh;
+  padding:0 20px;
+  z-index: -1;
 }
