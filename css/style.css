@@ -2,12 +2,11 @@
   --blue: #0cb3c9;
 }
 
-
-@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,200i,300,300i,400,400i,600,600i,700,700i,900&display=swap');
 
 
 * {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 
@@ -19,8 +18,9 @@ h3 {
   font-size: 35px;
 }
 
-h4 {
+.subtext {
   font-size: 20px;
+  font-weight: 200;
 }
 
 .blue {
@@ -33,11 +33,14 @@ h4 {
   padding: 20px 40px;
   font-size: 35px;
   margin-top: 50px;
+  margin-bottom: 50px;
+  transition: 0.25s;
 }
 
 .log-in:hover {
   background-color: var(--blue);
   color: white;
+  transition: 0.25s;
 }
 
 
@@ -56,7 +59,7 @@ h4 {
   color: white;
 }
 
-.fa:hover {
+.circ:hover {
     opacity: 0.7;
 }
 
@@ -65,8 +68,8 @@ h4 {
   font-size: 30px;
   width: 30px;
   height: 30px;
-  /* text-align: center;
-  text-decoration: none; */
+  text-align: center;
+  text-decoration: none;
   margin: 5px 2px;
   border-radius: 50%;
 }
