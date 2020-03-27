@@ -1,40 +1,53 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Your ENDT1 Profile</title>
-  </head>
-<body style="text-align: center;">
-<header id="profile-showcase">
+<HTML>
+<HEAD>
+    <TITLE>Your ENDT1 Profile</TITLE>
+<STYLE>
+input[type=text] {
+  width: 10%;
+  color: black;
+  border: 2px solid black;
+  border-radius: 4px; 
+  padding: 4px;
+}
 
+input[type=submit] {
+    background-color: ;
+    color: black;
+    border-radius: 10px;  
+    cursor: pointer;
+    border: 1.5px solid black;
+    height: 25px;
+}
 
+</STYLE>
+</HEAD>
 
+<BODY bgcolor="white" style="text-align:center;">
+
+<HEADER id="profile-showcase">
   <link rel="stylesheet" href="../css/style.css" />
   <!-- profile photo goes at top of page-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
   <div id="profile-container">
-     <image id="profileImage" src="http://lorempixel.com/100/100" />
+     <img src="img/profile_placeholder.jpg" style="width:160px;height:160px;">
   </div>
-  <input id="imageUpload" type="file"
-         name="profile_photo" placeholder="Photo" required="" capture>
+  <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="required" capture>
 
   <!-- profile information goes here-->
-  <form action="profile.html" method="POST" class="frm">
-  <div class="container" style="text-align: center;">
-    <label for="uname"><b>Name</b></label>
-    <input type="text" style="text-align: center;" placeholder="Enter Name" name="uname" required>
-
-    <label for="psw"><b>Email</b></label>
-    <input type="password" style="text-align: center;" placeholder="Enter Email" name="psw" required>
-
-    <button type="submit" href="profile.html">Save</button>
+  <FORM action="profile.html" method="POST" class="frm">
+  <div class="container" style="text-align:center;">
+    <label for="uname"><b> Name </b></label>
+    <input type="text" name="uname" placeholder="Enter Name" required="required">
+    <label for="email"><b> Email </b></label>
+    <input type="text" name="psw" placeholder="Enter Email" required="required">
+    <INPUT type="submit" href="profile.html" value="save"/> 
   </div>
+  </FORM>
 
-</form>
+</HEADER>
 
-  </header>
+</BODY>
 
-
-  </body>
-
-
-</html>
+</HTML>
