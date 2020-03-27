@@ -20,6 +20,16 @@
       height: 25px;
   }
 
+  .prof-img {
+   max-height:100%;
+   position: absolute;
+   top: -9999px;
+   bottom: -9999px;
+   left: -9999px;
+   right: -9999px;
+   margin: auto;
+  }
+
 </STYLE>
 </HEAD>
 
@@ -30,8 +40,8 @@
   <!-- profile photo goes at top of page-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-  <div id="profile-container" style="width:160px; height:160px; border:1px solid lightgrey">
-     <img id = "output" src="img/profile_placeholder.jpg" style="max-width:100%;max-height:100%;margin:auto;">
+  <div id="profile-container" style="width:160px; height:160px; border:1px solid lightgrey; position: relative; overflow: hidden;">
+     <img id = "output" src="img/profile_placeholder.jpg" class="prof-img">
   </div>
   <input id="imageUpload" type="file" name="profile_photo" onchange="loadFile(event);" placeholder="Photo" required="required" capture>
   <label for="file" style="cursor: pointer;">Upload Image</label>
