@@ -26,14 +26,23 @@
 <BODY bgcolor="white" style="text-align:center;">
 
 <HEADER id="profile-showcase">
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="css/old_style.css" />
   <!-- profile photo goes at top of page-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-  <div id="profile-container">
-     <img src="img/profile_placeholder.jpg" style="width:160px;height:160px;">
+  <div id="profile-container" style="width:160px; height:160px; border:1px solid lightgrey">
+     <img id = "output" src="img/profile_placeholder.jpg" style="max-width:100%;max-height:100%;margin:auto;">
   </div>
-  <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="required" capture>
+  <input id="imageUpload" type="file" name="profile_photo" onchange="loadFile(event);" placeholder="Photo" required="required" capture>
+  <label for="file" style="cursor: pointer;">Upload Image</label>
+
+  <script>
+    function loadFile(event) {
+  	  var image = document.getElementById('output');
+  	  image.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>
+
 
   <!-- profile information goes here-->
   <FORM action="profile.html" method="POST" class="frm">
