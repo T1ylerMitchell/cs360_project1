@@ -13,6 +13,6 @@ include("utils.php");
 	</head>
 	<body>
 	Your account has been created, check your email to verify your account.
-	<button type="button" href="login.html">Log in</button>
+	<button type="button" onclick="location.href='login.html'">Log in</button>
 	</body>
 </html>
