@@ -1,0 +1,163 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+body{
+  margin:0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 17px;
+  color:#248AD5;
+  line-height: 1.6;
+}
+
+#showcase{
+  background-image:url('../img/landing img.jpg');
+  background-size:cover;
+  background-position:center;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+  padding:0 20px;
+  z-index: -1;
+}
+
+
+
+#inner-module {
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  left:20%;
+  top: 35%;
+  width: 100%
+  padding:0 20px;
+  z-index: 1;
+}
+
+#inner-module h1{
+  font-size: 50px;
+  line-height: 1.2;
+}
+
+#inner-module p{
+  font-size: 20px;
+}
+
+#inner-module .button{
+  font-size: 18px;
+  text-decoration: none;
+  color:#248AD5;
+  border:#248AD5 1px solid;
+  padding:10px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+#inner-module .button:hover{
+  background:#248AD5;
+  color:#fff;
+}
+
+#section-a{
+  padding:20px;
+  background:#248AD5;
+  color:#fff;
+  text-align: center;
+}
+
+#section-b{
+  padding:20px;
+  background:#fff;
+  color:#248AD5;
+  text-align: center;
+}
+
+#section-c{
+  display: flex;
+}
+
+#section-c .box-1, #section-c .box-3{
+  background:#248AD5;
+  color:#fff;
+  padding:20px;
+}
+
+form {
+  border: 3px solid #fff;
+  background-color: #fff;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #248AD5;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 12px 0 12px 0;
+  width: 50px;
+  height: 50px;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  width: 350px;
+  align-items: flex-end;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: right;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+#showcase .frm {
+  align-content: center;
+
+}
+
+#profile-showcase {
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 25vh;
+  padding:0 20px;
+  z-index: -1;
+}

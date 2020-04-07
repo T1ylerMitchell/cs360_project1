@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>Signup Page</title>
+
+<script>
+	// Function to check Whether both passwords
+  // is same or not.
+            function checkPassword(form) {
+                password1 = form.pass.value;
+                password2 = form.pass2.value;
+
+                // If password not entered
+                if (password1 == '')
+                    alert ("Please enter Password");
+
+                // If confirm password not entered
+                else if (password2 == '')
+                    alert ("Please enter confirm password");
+
+                // If Not same return False.
+                else if (password1 != password2) {
+                    alert ("\nPassword did not match: Please try again...")
+                    return false;
+                }
+
+                // If same return True.
+                else{
+                    return true;
+
+                }
+            }
+</script>
+
+</head>
+
+<body>
+<header id="showcase">
+<link rel="stylesheet" href="css/old_style.css" />
+<center><H3>Please enter the following information <br/> to sign up for your new account:</H3></center>
+<div class="container" id="signup" style="text-align: center;">
+
+<form name="signupForm" method="POST"
+      action="signup_f.php" style="border: 20px solid #fff" onSubmit="return checkPassword(signupForm)">
+
+<input type="text" id = "user" name="login" placeholder="username" required/>
+<br/>
+<input type="text" id = "fname" name="fname" placeholder="first name" required/>
+<br/>
+<input type="text" id = "lname" name="lname" placeholder="last name" required/>
+<br/>
+Birthday
+<br/>
+<input type="date" id = "bdate" name="bdate" required/>
+<br/>
+<input type="text" id = "email" name="email" placeholder="email address" required/>
+<br/>
+<input type="text" id = "address" name="address" placeholder="mailing address" required/>
+<br/>
+Phone number
+<br/>
+<input type="tel" id = "phone" name="phone" required/>
+<br/>
+<input type="password" id = "pass" name="pass" placeholder="password" required/>
+<br/>
+<input type="password" id = "pass2" name="pass2" placeholder="retype password" required/>
+<br/>
+<button type="submit">Sign up</button>
+
+</form>
+</div>
+</header>
+</body>
+</html>
