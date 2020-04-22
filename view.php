@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <HTML>
 	<TITLE> Products </TITLE>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <HEAD>
 
 <STYLE>
@@ -104,6 +107,10 @@
 
 <BODY>
 
+<div class="container">
+<a href="ViewCart.php" class="btn btn-warning col-lg-2">Cart</a>
+</div>
+
 <?php
   include("db_connect.php");
   include("utils.php");
@@ -112,16 +119,17 @@
 
   while($row = $qRes->fetch()) {
       $name = $row['name'];
-      $description= $row['description'];
+      $description = $row['description'];
       $price = $row['price'];
       $image = $row['image'];
 
       echo 
-      "<main class=container>
-      <!-- Left Column / Headphones Image -->
+      "<form action='insertCart.php' method=POST>
+      <main class=container>
+      <!-- Left Column -->
         <div class=left-column>
-        <img data-image=black class=active src=$image>
-        </div>
+        <img data-image=black class=active src=$image style=width:350px;height:350px;>
+        </div> 
  
       <!-- Right Column -->
         <div class=right-column>
@@ -131,16 +139,21 @@
         <h1>$name</h1>
         <p>$description</p>
         </div>
+
+      	<input type=hidden name='name' value='$name'>
+      	<input type=hidden name='price' value='$price'>
  
       <!-- Product Pricing -->
         <div class=product-price>
         <span>$price$</span>
-        <a href=# class=cart-btn>Add to cart</a>
+        <input type=submit value='Add to Cart' class=cart-btn></input>
         </div> 
         </main>
-        <hr>";
+        <hr>
+        </form>";
     } 
 ?>
+
 </BODY>
 
 </HEAD>
