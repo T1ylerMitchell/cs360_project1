@@ -72,4 +72,11 @@ function verifyEmail($db, $userLogin) {
 	$qRes = $db->query($qStr);
 }
 
+function getProducts($db) {
+	$qStr = "SELECT * FROM product;";
+	$qRes = $db->query($qStr);
+
+	return $qRes;
+}
+
 ?>
