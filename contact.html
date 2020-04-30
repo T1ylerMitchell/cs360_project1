@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+    <TITLE> Contact Us </TITLE>
+<STYLE>
+
+input[type=text], input[type=email], textarea {
+	  width: 90%;
+	  border: 2px solid black;
+	  border-radius: 4px;	
+	  padding: 4px;
+ 	  color: black;
+
+      resize: none;
+}
+
+input[type=submit] {
+	background-color: white;
+  	color: black;
+  	border-radius: 15px;	
+  	cursor: pointer;
+  	margin-left: 100px;
+  	border: 1.5px solid black;
+  	height: 25px;
+}
+
+img {
+   	position: fixed;
+    top: 10%;
+    margin-left: 60px;
+}
+
+div {
+   	height: 200px;
+    width: 400px;
+   	position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -150px;
+}
+
+fieldset { 
+  	display: block;
+  	border: 2px solid;
+}
+
+</STYLE>
+</HEAD>
+
+<BODY bgcolor=white>
+
+<DIV>
+  <img src="img/Logo.png" style="width:160px;height:160px;">
+
+  <FORM name="contact" method="POST" action="contact.php">
+    <fieldset style="width:250px" form=contact>
+      <legend><H3> Contact Us </H3></legend> 
+      <label for="name"> Name: </label>
+      <INPUT type="text" name="name" placeholder="Enter your name" required="required" pattern="[a-zA-Z][a-zA-Z0-9_.@]{1,20}" autofocus="autofocus"/>
+      <BR/><BR/>
+      <label for="email"> Email: </label>
+      <INPUT type="email" name="email" placeholder="abcd@gmail.com" required="required"/>
+      <BR/><BR>
+      <label for="subject"> Subject: </label>
+      <INPUT type="text" name="subject" placeholder="Order Enquiry" required="required"/>
+      <BR><BR>
+      <label for="message"> Message: </label>
+      <TEXTAREA name="message" placeholder="Your Message" required="required" rows="15"></TEXTAREA>
+      <BR><BR>
+      <INPUT type="submit" value="Submit"/>
+     </fieldset>
+  </FORM>
+
+  <a href="index.html" target="_blank"> Home </a> 
+</DIV>
+
+</BODY>
+</HTML>

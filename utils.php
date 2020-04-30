@@ -1,13 +1,15 @@
 <?php
 include_once("db_connect.php");
 
-//$login = $_POST['login'];
-//$pass = $_POST['pass'];
-//$bdate = $_POST['bdate'];
-//$email = $_POST['email'];
+$login = $_POST['login'];
+$pass = $_POST['pass'];
+$bdate = $_POST['bdate'];
+$email = $_POST['email'];
 
 function checkUser($db, $login, $pass) {
-	$passHash = md5($pass);
+
+	$passHash = md5($pass); 
+	
 	$qStr1 = "SELECT username FROM user WHERE username = '$login';";
 	$qStr2 = "SELECT ulogin FROM unverified WHERE ulogin = '$login';";
 	$qStr3 = "SELECT username FROM user WHERE username = '$login' AND passHash = '$passHash';";
@@ -57,13 +59,13 @@ function registerUser($db, $input) {
 	}
 
 	addUser($db, $login, $pass, $bdate, $email, $fname, $lname, $address, $phone);
-	//compose a link and email the link to to user
-	// $subject = "Verify your email!";
-	// $link = "http://www.cs.gettysburg.edu/~kilcem01/cs360/verify.php?uid=".$login;
-	// $content = "<html><body><a href='$link'>Click here to verify your email.</a></body></html>";
-	// $headers  = 'MIME-Version: 1.0' . "\r\n";
-	// $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-	// 	mail($email, $subject, $content, $headers);
+	compose a link and email the link to to user
+	$subject = "Verify your email!";
+	$link = "http://www.cs.gettysburg.edu/~kilcem01/cs360/verify.php?uid=".$login;
+	$content = "<html><body><a href='$link'>Click here to verify your email.</a></body></html>";
+	$headers  = 'MIME-Version: 1.0' . "\r\n";
+	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		mail($email, $subject, $content, $headers);
 	return true;
 }
 
@@ -73,7 +75,7 @@ function verifyEmail($db, $userLogin) {
 }
 
 function getProducts($db) {
-	$qStr = "SELECT * FROM product;";
+	$qStr = "SELECT * FROM products;";
 	$qRes = $db->query($qStr);
 
 	return $qRes;

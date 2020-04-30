@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    include_once("db_connect.php");
+  session_start();
+  include_once("db_connect.php");
 ?>
 
 <!DOCTYPE html>
@@ -34,10 +34,16 @@
    right: -9999px;
    margin: auto;
   }
+  
+  .topcorner{
+    position:absolute;
+    top:30px;
+    right: 100px;
+ }
 
 </STYLE>
-Hello: <?php print($_SESSION['username']) ?>
-    </head>
+</HEAD>
+
 <BODY bgcolor="white" style="text-align:center;">
 
 <HEADER id="profile-showcase">
@@ -58,26 +64,55 @@ Hello: <?php print($_SESSION['username']) ?>
     };
 </script>
 
-
   <!-- profile information goes here-->
-  <FORM action="profile.html" method="POST" class="frm">
+  <FORM action="updateProfile_f.php" method="POST" class="frm">
   <div class="container" style="text-align:center;">
     <!-- get the users fname from database -->
     <?php
          $username = $_SESSION['username'];
-         $qStr = "SELECT fname FROM user WHERE username='$username';";
-         $fname = $db->query($qStr);
+         $qStr = "SELECT * FROM user WHERE username='$username';";
+         $arr = $db->query($qStr)->fetch();
+         $fname = $arr['fname'];
+         $lname = $arr['lname'];
+         $email = $arr['email'];
+         $phone = $arr['phone_num'];
+         $address = $arr['address'];
+         $bdate = $arr['bdate'];
     ?>
     <label for="fname"><b> First Name </b></label>
-    <input type="text" name="fname" placeholder="<?php echo $fname?>" required="required">
+    <input type="text" name="fname" value="<?php echo $fname?>" required="required">
+    <label for="lname"><b> Last Name </b></label>
+    <input type="text" name="lname" value="<?php echo $lname?>" required="required">
+    <label for="bdate"><b> Birthdate </b></label>
+    <input type="text" name="bdate" value="<?php echo $bdate?>" required="required">
     <label for="email"><b> Email </b></label>
-    <input type="text" name="psw" placeholder="Enter Email" required="required">
-    <INPUT type="submit" href="profile.html" value="save"/>
+    <input type="text" name="email" value="<?php echo $email?>" required="required">
+    <label for="phone"><b> Phone Number </b></label>
+    <input type="text" name="phone" value="<?php echo $phone?>" required="required">
+    <label for="address"><b> Address </b></label>
+    <input type="text" name="address" value="<?php echo $address?>" required="required">
+    <input type="hidden" name="username" value="<?php echo $username?>">
+    <button type="submit">Save</button>
   </div>
   </FORM>
+  
+<div class="topcorner">
+<ul>
+
+<form name="subscribeNow" method="POST" action="subscription.php" class="frm">
+    <input type="hidden" name="username" value="<?php echo $username?>">
+    <button type="submit">New Subscription</button>
+</form>
+
+<form name="viewProducts" method="POST" action="view.php" class="frm">
+    <input type="hidden" name="username" value="<?php echo $username?>">
+    <button type="submit">Browse Products</button>
+</form>
+
+</ul>
+</div>
 
 </HEADER>
 
 </BODY>
-
 </html>
